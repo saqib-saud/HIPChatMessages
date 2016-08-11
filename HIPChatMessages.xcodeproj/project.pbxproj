@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C17225E11D5CA35700FF5635 /* DetectorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17225E01D5CA35700FF5635 /* DetectorFactory.swift */; };
+		C19208981D5CE6330083BB76 /* NSRange+MessageParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19208971D5CE6330083BB76 /* NSRange+MessageParsing.swift */; };
+		C192089A1D5CE6AB0083BB76 /* LinkDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19208991D5CE6AB0083BB76 /* LinkDetector.swift */; };
 		C1E68A141D5C69C300BFBE71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E68A131D5C69C300BFBE71 /* AppDelegate.swift */; };
 		C1E68A161D5C69C300BFBE71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E68A151D5C69C300BFBE71 /* ViewController.swift */; };
 		C1E68A191D5C69C300BFBE71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E68A171D5C69C300BFBE71 /* Main.storyboard */; };
 		C1E68A1B1D5C69C300BFBE71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1E68A1A1D5C69C300BFBE71 /* Assets.xcassets */; };
 		C1E68A1E1D5C69C300BFBE71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E68A1C1D5C69C300BFBE71 /* LaunchScreen.storyboard */; };
 		C1E68A291D5C69C300BFBE71 /* HIPChatMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E68A281D5C69C300BFBE71 /* HIPChatMessagesTests.swift */; };
+		C1E68A351D5C69FB00BFBE71 /* MessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E68A341D5C69FB00BFBE71 /* MessageParser.swift */; };
+		C1E68A371D5C6A1100BFBE71 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E68A361D5C6A1100BFBE71 /* Detector.swift */; };
+		C1E68A391D5C6A3000BFBE71 /* NSRegularExpression+MessageParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E68A381D5C6A3000BFBE71 /* NSRegularExpression+MessageParsing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C17225E01D5CA35700FF5635 /* DetectorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectorFactory.swift; sourceTree = "<group>"; };
+		C19208971D5CE6330083BB76 /* NSRange+MessageParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+MessageParsing.swift"; sourceTree = "<group>"; };
+		C19208991D5CE6AB0083BB76 /* LinkDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkDetector.swift; sourceTree = "<group>"; };
 		C1E68A101D5C69C300BFBE71 /* HIPChatMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIPChatMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E68A131D5C69C300BFBE71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1E68A151D5C69C300BFBE71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +45,9 @@
 		C1E68A241D5C69C300BFBE71 /* HIPChatMessagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HIPChatMessagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E68A281D5C69C300BFBE71 /* HIPChatMessagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIPChatMessagesTests.swift; sourceTree = "<group>"; };
 		C1E68A2A1D5C69C300BFBE71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1E68A341D5C69FB00BFBE71 /* MessageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageParser.swift; sourceTree = "<group>"; };
+		C1E68A361D5C6A1100BFBE71 /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		C1E68A381D5C6A3000BFBE71 /* NSRegularExpression+MessageParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+MessageParsing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,7 @@
 		C1E68A121D5C69C300BFBE71 /* HIPChatMessages */ = {
 			isa = PBXGroup;
 			children = (
+				C1E68A331D5C69DC00BFBE71 /* Source */,
 				C1E68A131D5C69C300BFBE71 /* AppDelegate.swift */,
 				C1E68A151D5C69C300BFBE71 /* ViewController.swift */,
 				C1E68A171D5C69C300BFBE71 /* Main.storyboard */,
@@ -94,6 +107,19 @@
 				C1E68A2A1D5C69C300BFBE71 /* Info.plist */,
 			);
 			path = HIPChatMessagesTests;
+			sourceTree = "<group>";
+		};
+		C1E68A331D5C69DC00BFBE71 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C1E68A341D5C69FB00BFBE71 /* MessageParser.swift */,
+				C1E68A361D5C6A1100BFBE71 /* Detector.swift */,
+				C19208991D5CE6AB0083BB76 /* LinkDetector.swift */,
+				C1E68A381D5C6A3000BFBE71 /* NSRegularExpression+MessageParsing.swift */,
+				C17225E01D5CA35700FF5635 /* DetectorFactory.swift */,
+				C19208971D5CE6330083BB76 /* NSRange+MessageParsing.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C17225E11D5CA35700FF5635 /* DetectorFactory.swift in Sources */,
+				C19208981D5CE6330083BB76 /* NSRange+MessageParsing.swift in Sources */,
 				C1E68A161D5C69C300BFBE71 /* ViewController.swift in Sources */,
 				C1E68A141D5C69C300BFBE71 /* AppDelegate.swift in Sources */,
+				C1E68A391D5C6A3000BFBE71 /* NSRegularExpression+MessageParsing.swift in Sources */,
+				C192089A1D5CE6AB0083BB76 /* LinkDetector.swift in Sources */,
+				C1E68A351D5C69FB00BFBE71 /* MessageParser.swift in Sources */,
+				C1E68A371D5C6A1100BFBE71 /* Detector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +420,7 @@
 				C1E68A2F1D5C69C300BFBE71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C1E68A301D5C69C300BFBE71 /* Build configuration list for PBXNativeTarget "HIPChatMessagesTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +429,7 @@
 				C1E68A321D5C69C300BFBE71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

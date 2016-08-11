@@ -20,17 +20,14 @@ class HIPChatMessagesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+      
+    func testMessages() {
+        let messages = ["@chris you around? @saqib ","Good morning! (megusta) (coffee)",
+                        "Olympics are starting soon;http://www.nbcolympics.com",
+                        "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"]
+        
+        var parser = MessageParser()
+       parser.parseMessages(messages)
     }
     
 }
