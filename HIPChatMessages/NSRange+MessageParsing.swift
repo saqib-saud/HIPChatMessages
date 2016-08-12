@@ -13,4 +13,9 @@ extension NSRange {
         guard location != NSNotFound else { return nil }
         return str.startIndex.advancedBy(location) ..< str.startIndex.advancedBy(location + length)
     }
+    
+    func rangeForString(str: String, omitStartEnd:String) -> Range<String.Index>? {
+        guard location != NSNotFound else { return nil }
+        return str.startIndex.advancedBy(location+omitStartEnd.characters.count) ..< str.startIndex.advancedBy(location + length - omitStartEnd.characters.count)
+    }
 }

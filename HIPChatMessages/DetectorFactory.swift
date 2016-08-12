@@ -19,6 +19,8 @@ struct DetectorFactory {
             return Detector(name: "Emoticons", regexQuery: "\\([a-zA-Z0-9]{1,15}\\)")
         case .Links:
             return LinkDetector(name: "Links", regexQuery: "")
+        case .TitleTag:
+            return Detector(name: "TitleTag", regexQuery: "<title>(.*)<\\/title>")
         }
     }
 }

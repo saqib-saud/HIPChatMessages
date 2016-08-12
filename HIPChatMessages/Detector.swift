@@ -12,6 +12,7 @@ enum DetectorType {
     case Mentions
     case Emoticons
     case Links
+    case TitleTag
 }
 protocol DetectorProtocol {
     var regexQuery: String { get }

@@ -24,7 +24,22 @@ struct LinkDetector:DetectorProtocol {
         for match in matches {
             let url = message.substringWithRange(match.range.rangeForString(message)!)
             linksObtained.append(url)
+            print("Link title:" + getLinkTitle(url))
         }
         return linksObtained
+    }
+}
+
+extension LinkDetector {
+    func getLinkTitle(stringURL:String) -> String {
+        let url = NSURL(string: stringURL)
+        do {
+            let htmlSource = try String(contentsOfURL: url!)
+            var titleTagDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.TitleTag)
+            return titleTagDetector.detectString(htmlSource)!.first!
+        }
+        catch {
+            return ""
+        }
     }
 }
