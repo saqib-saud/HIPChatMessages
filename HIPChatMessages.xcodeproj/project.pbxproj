@@ -10,6 +10,7 @@
 		C17225E11D5CA35700FF5635 /* DetectorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17225E01D5CA35700FF5635 /* DetectorFactory.swift */; };
 		C19208981D5CE6330083BB76 /* NSRange+MessageParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19208971D5CE6330083BB76 /* NSRange+MessageParsing.swift */; };
 		C192089A1D5CE6AB0083BB76 /* LinkDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19208991D5CE6AB0083BB76 /* LinkDetector.swift */; };
+		C192089E1D5F71580083BB76 /* LinkInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192089D1D5F71580083BB76 /* LinkInfoBuilder.swift */; };
 		C1E68A141D5C69C300BFBE71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E68A131D5C69C300BFBE71 /* AppDelegate.swift */; };
 		C1E68A161D5C69C300BFBE71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E68A151D5C69C300BFBE71 /* ViewController.swift */; };
 		C1E68A191D5C69C300BFBE71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E68A171D5C69C300BFBE71 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		C17225E01D5CA35700FF5635 /* DetectorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectorFactory.swift; sourceTree = "<group>"; };
 		C19208971D5CE6330083BB76 /* NSRange+MessageParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+MessageParsing.swift"; sourceTree = "<group>"; };
 		C19208991D5CE6AB0083BB76 /* LinkDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkDetector.swift; sourceTree = "<group>"; };
+		C192089D1D5F71580083BB76 /* LinkInfoBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkInfoBuilder.swift; sourceTree = "<group>"; };
 		C1E68A101D5C69C300BFBE71 /* HIPChatMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIPChatMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E68A131D5C69C300BFBE71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1E68A151D5C69C300BFBE71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				C1E68A341D5C69FB00BFBE71 /* MessageParser.swift */,
 				C1E68A361D5C6A1100BFBE71 /* Detector.swift */,
 				C19208991D5CE6AB0083BB76 /* LinkDetector.swift */,
+				C192089D1D5F71580083BB76 /* LinkInfoBuilder.swift */,
 				C1E68A381D5C6A3000BFBE71 /* NSRegularExpression+MessageParsing.swift */,
 				C17225E01D5CA35700FF5635 /* DetectorFactory.swift */,
 				C19208971D5CE6330083BB76 /* NSRange+MessageParsing.swift */,
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C17225E11D5CA35700FF5635 /* DetectorFactory.swift in Sources */,
+				C192089E1D5F71580083BB76 /* LinkInfoBuilder.swift in Sources */,
 				C19208981D5CE6330083BB76 /* NSRange+MessageParsing.swift in Sources */,
 				C1E68A161D5C69C300BFBE71 /* ViewController.swift in Sources */,
 				C1E68A141D5C69C300BFBE71 /* AppDelegate.swift in Sources */,

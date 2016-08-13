@@ -27,7 +27,7 @@ class HIPChatMessagesTests: XCTestCase {
                         "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"]
         
         var parser = MessageParser()
-       parser.parseMessages(messages)
+       print(parser.parseMessages(messages))
     }
     
 }

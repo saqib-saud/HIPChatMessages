@@ -1,3 +1,4 @@
+
 //
 //  LinkDetector.swift
 //  HIPChatMessages
@@ -11,35 +12,24 @@ import Foundation
 struct LinkDetector:DetectorProtocol {
     let regexQuery: String
     let name: String
-    var detectedStrings: [String]?
     init(name:String, regexQuery:String) {
         self.regexQuery = regexQuery
         self.name = name
     }
     
-    mutating func detectString(message: String) -> [String]? {
+    mutating func detectString(message: String) -> [AnyObject]? {
         let detector = try! NSDataDetector(types: NSTextCheckingType.Link.rawValue)
         let matches = detector.matchesInString(message, options: [], range: NSRange(location: 0, length: message.utf16.count))
-        var linksObtained = [String]()
+        var linksObtained = [AnyObject]()
         for match in matches {
             let url = message.substringWithRange(match.range.rangeForString(message)!)
-            linksObtained.append(url)
-            print("Link title:" + getLinkTitle(url))
+            linksObtained.append(LinkInfoBuilder.getLinkTitle(url) as AnyObject)
         }
-        return linksObtained
-    }
-}
-
-extension LinkDetector {
-    func getLinkTitle(stringURL:String) -> String {
-        let url = NSURL(string: stringURL)
-        do {
-            let htmlSource = try String(contentsOfURL: url!)
-            var titleTagDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.TitleTag)
-            return titleTagDetector.detectString(htmlSource)!.first!
+        if linksObtained.count > 0 {
+            return linksObtained
         }
-        catch {
-            return ""
+        else {
+            return nil
         }
     }
 }

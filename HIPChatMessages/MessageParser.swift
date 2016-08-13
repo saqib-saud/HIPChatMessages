@@ -9,7 +9,7 @@
 import Foundation
 
 struct MessageParser {
-    var parsedMessage:[String:Array<String>]?
+    var parsedMessage:[String:Array<AnyObject>]?
     /**
      Parses array of String
      - parameter messages: Array of Strings
@@ -21,12 +21,18 @@ struct MessageParser {
         var linkDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.Links)
         self.parsedMessage = [mentionDetector.name:[],emoticonDetector.name:[], linkDetector.name:[]]
         for message in messages {
-            self.parsedMessage![mentionDetector.name]!.appendContentsOf(mentionDetector.detectString(message)!)
-            self.parsedMessage![emoticonDetector.name]!.appendContentsOf(emoticonDetector.detectString(message)!)
-            self.parsedMessage![linkDetector.name]!.appendContentsOf(linkDetector.detectString(message)!)
+            if let detectedMessage = mentionDetector.detectString(message){
+                self.parsedMessage![mentionDetector.name]!.appendContentsOf(detectedMessage as [AnyObject])
+            }
+            if let detectedMessage = emoticonDetector.detectString(message){
+                self.parsedMessage![emoticonDetector.name]!.appendContentsOf(detectedMessage as [AnyObject])
+            }
+            if let detectedMessage = linkDetector.detectString(message){
+                self.parsedMessage![linkDetector.name]!.appendContentsOf(detectedMessage as [AnyObject])
+            }
         }
-        self.generateJSONString()
-        return mentionDetector.detectString(messages[0])!.first!
+        
+        return self.generateJSONString()
     }
 }
 
@@ -35,7 +41,6 @@ extension MessageParser {
         do {
             let jsonData = try NSJSONSerialization.dataWithJSONObject(parsedMessage!, options: NSJSONWritingOptions.PrettyPrinted)
             let jsonString = String(data: jsonData, encoding: NSUTF8StringEncoding)
-            print("JSON:\(jsonString!)")
             return jsonString!
             
         } catch _ as NSError {

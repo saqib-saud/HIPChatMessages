@@ -16,23 +16,20 @@ enum DetectorType {
 }
 protocol DetectorProtocol {
     var regexQuery: String { get }
-    var detectedStrings: [String]? { get }
     var name: String { get }
-    mutating func detectString(message: String) -> [String]?
+    mutating func detectString(message: String) -> [AnyObject]?
 }
 
 
 struct Detector: DetectorProtocol {
     let regexQuery: String
     let name: String
-    var detectedStrings: [String]?
     init(name:String, regexQuery:String) {
         self.regexQuery = regexQuery
         self.name = name
     }
-    mutating func detectString(message: String) -> [String]? {
-        detectedStrings = NSRegularExpression.matchesInMessageString(message, pattern: regexQuery)
-        return detectedStrings
+    mutating func detectString(message: String) -> [AnyObject]? {
+        return NSRegularExpression.matchesInMessageString(message, pattern: regexQuery)
     }
 }
 
