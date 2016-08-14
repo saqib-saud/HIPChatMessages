@@ -25,11 +25,11 @@ struct LinkDetector:DetectorProtocol {
             let url = message.substringWithRange(match.range.rangeForString(message)!)
             linksObtained.append(LinkInfoBuilder.getLinkTitle(url) as AnyObject)
         }
-        if linksObtained.count > 0 {
+//        if linksObtained.count > 0 {
             return linksObtained
-        }
-        else {
-            return nil
-        }
+//        }
+//        else {
+//            return nil
+//        }
     }
 }

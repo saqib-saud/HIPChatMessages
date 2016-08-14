@@ -14,8 +14,7 @@ struct LinkInfoBuilder {
         do {
             let htmlSource = try String(contentsOfURL: url!)
             var titleTagDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.TitleTag)
-//            return ["url":stringURL, "title":titleTagDetector.detectString(htmlSource)!.first!]
-            return ["url":stringURL, "title":""]
+            return ["url":stringURL, "title":titleTagDetector.detectString(htmlSource)!.first! as! String]
         }
         catch {
             return ["url":stringURL, "title":""]
