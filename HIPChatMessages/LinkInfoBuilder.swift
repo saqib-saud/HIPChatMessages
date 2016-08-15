@@ -22,14 +22,12 @@ struct LinkInfoBuilder {
             //We are doing blocking operation, ideally it should be asynchoronus operation
             let htmlSource = try String(contentsOfURL: url!)
             var titleTagDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.TitleTag)
-            if let title = titleTagDetector.detectString(htmlSource)!.first {
-                return ["url":stringURL, "title":title as! String]
-            }
-            else {
+            if let title = titleTagDetector.detectString(htmlSource)!.first as? String{
+                return ["url":stringURL, "title":title]
+            } else {
                 return ["url":stringURL, "title":""]
             }
-        }
-        catch {
+        } catch {
             return ["url":stringURL, "title":""]
         }
     }

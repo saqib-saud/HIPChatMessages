@@ -10,17 +10,6 @@ import XCTest
 @testable import HIPChatMessages
 
 class HIPChatMessagesTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-      
     func testMessages() {
         let messages = ["@chris you around? @saqib ","Good morning! (megusta) (coffee)",
                         "Olympics are starting soon;http://www.nbcolympics.com",
@@ -28,9 +17,38 @@ class HIPChatMessagesTests: XCTestCase {
         
         var parser = MessageParser()
         let messageStringTokens = parser.parseMessages(messages)
-        let parsedJson = messageStringTokens.parseJSONString as! [String:AnyObject]?
-        XCTAssertNotNil(parsedJson!, "Invalid JSON; Unable to parse")
-
+        print(messageStringTokens)
+        guard let parsedJson = (messageStringTokens.parseJSONString as? [String:AnyObject]) else {
+            XCTFail("Parsing failed")
+            return
+        }
+        guard let emoticons = parsedJson["Emoticons"] as? [String] else {
+            XCTFail("failed to get Emoticons")
+            return
+        }
+        XCTAssertEqual(emoticons.count, 3, "Must have 3 emoticons")
+        XCTAssertNotNil(emoticons.contains("megusta"), "Failed to identify \"megusta\" from input String")
+        XCTAssertNotNil(emoticons.contains("coffee"), "Failed to identify \"coffee\" from input String")
+        XCTAssertNotNil(emoticons.contains("success"), "Failed to identify \"success\" from input String")
+        
+        guard let mentions = (parsedJson["Mentions"] as? [String]) else {
+            XCTFail("failed to get Mentions")
+            return
+        }
+        XCTAssertEqual(mentions.count, 4, "Must have 3 emoticons")
+        XCTAssertNotNil(mentions.contains("saqib"), "Failed to identify \"saqib\" from input String")
+        XCTAssertNotNil(mentions.contains("Good"), "Failed to identify \"Good\" from input String")
+        XCTAssertNotNil(mentions.contains("Olympics"), "Failed to identify \"Olympics\" from input String")
+        XCTAssertNotNil(mentions.contains("john"), "Failed to identify \"john\" from input String")
+        
+        guard let links = (parsedJson["Links"] as? [[String : AnyObject]]) else {
+            XCTFail("failed to get Links")
+            return
+        }
+        print(links[0]["url"])
+        XCTAssertEqual(links.count, 2, "Must have 3 emoticons")
+        XCTAssertNotNil(links[0]["url"]!, "Failed to identify link")
+        XCTAssertNotNil(links[1]["url"]!, "Failed to identify link")
     }
     
 }
