@@ -15,9 +15,9 @@ class HIPChatMessagesTests: XCTestCase {
                         "Olympics are starting soon;http://www.nbcolympics.com",
                         "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"]
         
-        var mentionDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.Mentions)
-        var emoticonDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.Emoticons)
-        var linkDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.Links)
+        let mentionDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.Mentions)
+        let emoticonDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.Emoticons)
+        let linkDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.Links)
         
         var parser = MessageParser(detectors: [mentionDetector, emoticonDetector, linkDetector])
         let messageStringTokens = parser.parseMessages(messages)
