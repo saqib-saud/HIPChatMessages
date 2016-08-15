@@ -16,7 +16,10 @@ Implements the DetectorProtocol and uses the iOS buil-in feature to identify the
 ##### LinkInfoBuilder
 Fetches the link and outputs the `<title>` tag
 ### DetectorFactory
-Encapsulates the creation of Detectors. 
+Encapsulates the creation of Detectors.
+### Regex
+In order to obtain user name from `@mention` or title from `<title></title`, We need regex that divides query into 2 or more groups.  
+
 ### MessageParser
 Parses the messages
 
