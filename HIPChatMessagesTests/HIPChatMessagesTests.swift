@@ -39,7 +39,7 @@ class HIPChatMessagesTests: XCTestCase {
             XCTFail("failed to get Mentions")
             return
         }
-        XCTAssertEqual(mentions.count, 4, "Must have 3 emoticons")
+        XCTAssertEqual(mentions.count, 4, "Must have 4 mentions")
         XCTAssertNotNil(mentions.contains("saqib"), "Failed to identify \"saqib\" from input String")
         XCTAssertNotNil(mentions.contains("Good"), "Failed to identify \"Good\" from input String")
         XCTAssertNotNil(mentions.contains("Olympics"), "Failed to identify \"Olympics\" from input String")
@@ -50,7 +50,7 @@ class HIPChatMessagesTests: XCTestCase {
             return
         }
         print(links[0]["url"])
-        XCTAssertEqual(links.count, 2, "Must have 3 emoticons")
+        XCTAssertEqual(links.count, 2, "Must have 2 links")
         XCTAssertNotNil(links[0]["url"]!, "Failed to identify link")
         XCTAssertNotNil(links[1]["url"]!, "Failed to identify link")
     }
