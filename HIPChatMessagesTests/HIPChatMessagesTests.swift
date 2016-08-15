@@ -27,7 +27,10 @@ class HIPChatMessagesTests: XCTestCase {
                         "@bob @john (success) such a cool feature; https://twitter.com/jdorfman/status/430511497475670016"]
         
         var parser = MessageParser()
-       print(parser.parseMessages(messages))
+        let messageStringTokens = parser.parseMessages(messages)
+        let parsedJson = messageStringTokens.parseJSONString as! [String:AnyObject]?
+        XCTAssertNotNil(parsedJson!, "Invalid JSON; Unable to parse")
+
     }
     
 }

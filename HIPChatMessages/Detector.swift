@@ -28,6 +28,14 @@ struct Detector: DetectorProtocol {
         self.regexQuery = regexQuery
         self.name = name
     }
+    
+    /**
+     Performs regex string detection operation
+     
+     - parameter message: message string
+     
+     - returns: Regex identified String without tags 
+     */
     mutating func detectString(message: String) -> [AnyObject]? {
         return NSRegularExpression.matchesInMessageString(message, pattern: regexQuery)
     }

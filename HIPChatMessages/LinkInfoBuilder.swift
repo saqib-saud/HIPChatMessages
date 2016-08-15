@@ -9,12 +9,25 @@
 import Foundation
 
 struct LinkInfoBuilder {
+    /**
+     Obtains the title of the URL
+     
+     - parameter stringURL: string URL
+     
+     - returns: Title of the link (i.e. first <title> tag)
+     */
     static func getLinkTitle(stringURL:String) -> [String: String] {
         let url = NSURL(string: stringURL)
         do {
+            //We are doing blocking operation, ideally it should be asynchoronus operation
             let htmlSource = try String(contentsOfURL: url!)
             var titleTagDetector = DetectorFactory.sharedInstance.createDetector(DetectorType.TitleTag)
-            return ["url":stringURL, "title":titleTagDetector.detectString(htmlSource)!.first! as! String]
+            if let title = titleTagDetector.detectString(htmlSource)!.first {
+                return ["url":stringURL, "title":title as! String]
+            }
+            else {
+                return ["url":stringURL, "title":""]
+            }
         }
         catch {
             return ["url":stringURL, "title":""]
